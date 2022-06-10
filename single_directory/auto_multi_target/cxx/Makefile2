@@ -1,0 +1,23 @@
+
+RM = rm -f
+CXX = g++
+CXXFLAGS = -Wall -g
+INCLUDES = 
+LDFLAGS =
+LDPATH =
+
+SOURCES = $(shell ls *.cpp)
+PROGS = $(SOURCES:%.cpp=%)
+#PROGS = $(subst .cpp,,$(SOURCES))
+
+all: $(PROGS)
+	@echo "PROGS = $(PROGS)" 
+
+clean:
+	$(RM) $(PROGS) *.o
+
+%.o:%.cpp
+	$(CXX) -o $@ -c $< $(CXXFLAGS) $(INCLUDES)
+
+$(PROGS): %: %.o
+	$(CXX) -o $@ $^ $(LDFLAGS) $(LDPATH)

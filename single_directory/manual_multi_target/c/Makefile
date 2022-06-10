@@ -17,15 +17,12 @@ clean:
 	@$(RM) $(PROGS) *.o
 	@echo "clean OK!"
 
-%.o:%.c
-	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDE)
+test1: test1.c
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDPATH)
 
-test1: test1.o
-	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
+test2: test2.c
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDPATH)
 
-test2: test2.o
-	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
-
-test3: test3.o
-	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
+test3: test3.c
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDPATH)
 
