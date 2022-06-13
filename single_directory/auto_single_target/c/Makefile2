@@ -1,0 +1,25 @@
+
+RM = rm -f
+CC = gcc
+CFLAGS = -Wall -g -DNDEBUG
+INCLUDES = 
+LDFLAGS =
+LDPATH =
+VPATH = 
+
+SOURCES = $(shell ls *.c)
+#OBJECTS = $(SOURCES:%.c=%.o)
+OBJECTS = $(subst .c,.o,$(SOURCES))
+PROGS = test_md5
+
+all: $(PROGS)
+	@echo "PROGS = $(PROGS)" 
+
+clean:
+	$(RM) $(PROGS) $(OBJECTS)
+
+$(OBJECTS): %.o: %.c
+	$(CC) -o $@ -c $(CFLAGS) $(INCLUDES) $<
+
+$(PROGS): $(OBJECTS)
+	$(CC) -o $@ $(CFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)
