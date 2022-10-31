@@ -1,20 +1,13 @@
-
-RM = rm -f
 CXX = g++
-CXXFLAGS = -Wall -g
-INCLUDES = 
-LDFLAGS =
-LDPATH =
+CXXFLAGS = -g3 -Wall -Wextra
 
 SOURCES = $(shell ls *.cpp)
-PROGS = $(subst .cpp,,$(SOURCES))
-#PROGS = $(SOURCES:%.cpp=%)
+TARGETS = $(subst .cpp,,$(SOURCES))
+#TARGETS = $(SOURCES:%.cpp=%)
 
-all: $(PROGS)
-	@echo "PROGS = $(PROGS)" 
+all: $(TARGETS)
+	@echo "TARGETS = $(TARGETS)" 
 
+.PHONY:
 clean:
-	$(RM) $(PROGS)
-
-%: %.cpp
-	$(CXX) -o $@ $(CXXFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)
+	$(RM) $(TARGETS) a.out core *.o
