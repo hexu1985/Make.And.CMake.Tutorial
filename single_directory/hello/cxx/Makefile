@@ -1,5 +1,5 @@
-CC = gcc
-CFLAGS = -Wall -g3 -Wall -Wextra
+CXX = g++
+CXXFLAGS = -Wall -g3 -Wall -Wextra
 TARGET = hello
 
 all: $(TARGET)
