@@ -1,20 +1,17 @@
-
-RM = rm -f
 CC = gcc
-CFLAGS = -Wall -g -DNDEBUG
-INCLUDES = 
-LDFLAGS =
-LDPATH =
-VPATH = 
+CFLAGS = -Wall -g3 -Wall -Wextra
 
 SOURCES = $(shell ls *.c)
-PROGS = test_md5
+TARGET = swap
 
-all: $(PROGS)
-	@echo "PROGS = $(PROGS)" 
+all: $(TARGET)
+	@echo "TARGET = $(TARGET)" 
 
+$(TARGET): $(SOURCES)
+	$(CC) $(CFLAGS) -o $@ $^
+
+.PHONY:
 clean:
-	$(RM) $(PROGS)
+	$(RM) $(TARGET) a.out core *.o
+	@echo "clean OK!"
 
-$(PROGS): $(SOURCES)
-	$(CC) -o $@ $(CFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)

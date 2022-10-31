@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -g3 -Wall -Wextra
 TARGET = hello
 
 all: $(TARGET)
-	@echo "build OK!"
+	@echo "TARGET = $(TARGET)" 
 
 .PHONY:
 clean:
