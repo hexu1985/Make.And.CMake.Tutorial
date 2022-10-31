@@ -1,20 +1,17 @@
-
-RM = rm -f
 CXX = g++
-CXXFLAGS = -Wall -g -DNDEBUG -std=c++11
-INCLUDES = 
-LDFLAGS = -lpthread
-LDPATH =
-VPATH = 
+CXXFLAGS = -g3 -Wall -Wextra
 
 SOURCES = $(shell ls *.cpp)
-PROGS = thread_test
+TARGET = chapter_3
 
-all: $(PROGS)
-	@echo "PROGS = $(PROGS)" 
+all: $(TARGET)
+	@echo "TARGET = $(TARGET)" 
 
+$(TARGET): $(SOURCES)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+.PHONY:
 clean:
-	$(RM) $(PROGS)
+	$(RM) $(TARGET) a.out core *.o
+	@echo "clean OK!"
 
-$(PROGS): $(SOURCES)
-	$(CXX) -o $@ $(CXXFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)
