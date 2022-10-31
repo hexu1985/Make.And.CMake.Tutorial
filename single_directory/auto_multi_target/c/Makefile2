@@ -13,3 +13,4 @@ $(TARGETS): %: %.o
 .PHONY:
 clean:
 	$(RM) $(TARGETS) a.out core *.o
+	@echo "clean OK!"

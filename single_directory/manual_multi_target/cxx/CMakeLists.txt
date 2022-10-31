@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 # project name and language
 project(manual_multi_target LANGUAGES CXX)
 
-add_executable(test1 test1.cpp)
-add_executable(test2 test2.cpp)
-add_executable(test3 test3.cpp)
+add_executable(queue_back_test queue_back_test.cpp)
+add_executable(queue_empty_test queue_empty_test.cpp)
+add_executable(queue_front_test queue_front_test.cpp)
+add_executable(queue_pop_test queue_pop_test.cpp)

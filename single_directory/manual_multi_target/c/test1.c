@@ -1,6 +1,7 @@
-#include <stdio.h>
-
-int main()
+int main( void )
 {
-	printf("hello test1");
+	int i;
+	i = 3;
+
+	return 0;
 }

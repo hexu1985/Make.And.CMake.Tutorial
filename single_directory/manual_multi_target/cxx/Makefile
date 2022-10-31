@@ -1,28 +1,12 @@
-# Makefile
-
-RM = rm -f
 CXX = g++
-CXXFLAGS = -Wall -g
-INCLUDE = 
-LDFLAGS = 
-LDPATH = 
+CXXFLAGS = -g3 -Wall -Wextra
 
-PROGS =	test1 test2 test3
+TARGETS = queue_back_test queue_empty_test queue_front_test queue_pop_test
 
-.PHONY: all
-all: $(PROGS)
-	@echo "build OK!"
+all: $(TARGETS)
+	@echo "TARGETS = $(TARGETS)" 
 
+.PHONY:
 clean:
-	@$(RM) $(PROGS) *.o
+	$(RM) $(TARGETS) a.out core *.o
 	@echo "clean OK!"
-
-test1: test1.cpp
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) $(LDPATH)
-
-test2: test2.cpp
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) $(LDPATH)
-
-test3: test3.cpp
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) $(LDPATH)
-
