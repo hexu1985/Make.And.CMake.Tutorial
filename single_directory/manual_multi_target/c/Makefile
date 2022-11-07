@@ -1,13 +1,25 @@
 CC = gcc
 CFLAGS = -g3 -Wall -Wextra
+INCLUDE = 
+LDFLAGS = 
+LDLIBS = 
 
-TARGETS = fibonacci test1 watch
+PROGS =	fibonacci test1 watch
 
-all: $(TARGETS)
-	@echo "TARGETS = $(TARGETS)" 
+.PHONY: all
+all: $(PROGS)
+	@echo "build OK!"
 
-.PHONY:
 clean:
-	$(RM) $(TARGETS) a.out core *.o
+	@$(RM) $(PROGS) *.o
 	@echo "clean OK!"
+
+fibonacci: fibonacci.c
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDLIBS)
+
+test1: test1.c
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDLIBS)
+
+watch: watch.c
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDLIBS)
 
