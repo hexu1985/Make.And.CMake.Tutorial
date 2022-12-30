@@ -2,6 +2,6 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 # project name and language
-project(hello LANGUAGES C)
+project(hello-world LANGUAGES C)
 
-add_executable(hello hello.c)
+add_executable(hello-world hello-world.c)

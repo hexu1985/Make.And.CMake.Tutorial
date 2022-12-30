@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-std::string say_hello() { return std::string("Hello, world!"); }
+std::string say_hello() { return std::string("Hello, CMake world!"); }
 
 int main() {
 #ifndef NDEBUG
