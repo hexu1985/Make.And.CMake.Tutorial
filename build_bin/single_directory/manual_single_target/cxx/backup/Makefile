@@ -1,16 +1,17 @@
 CXX = g++
 CXXFLAGS = -g3 -Wall -Wextra
 
-OBJECTS = Main.o Directory.o Element.o Entry.o File.o ListVisitor.o Visitor.o
+SOURCES = Main.cpp Directory.cpp Element.cpp Entry.cpp File.cpp ListVisitor.cpp Visitor.cpp
 TARGET = Visitor
 
 all: $(TARGET)
 	@echo "TARGET = $(TARGET)" 
 
-$(TARGET): $(OBJECTS)
-	$(CXX) -o $@ $^
+$(TARGET): $(SOURCES)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 .PHONY:
 clean:
 	$(RM) $(TARGET) a.out core *.o
 	@echo "clean OK!"
+

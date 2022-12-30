@@ -2,14 +2,23 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 # project name and language
-project(manual_single_target LANGUAGES CXX)
+project(Visitor LANGUAGES CXX)
 
 # list sources
 list(APPEND _sources 
-    main.cpp 
-    student.cpp 
-    student.h 
-    teacher.cpp 
-    teacher.h)
+    Directory.cpp
+    Directory.hpp
+    Element.cpp
+    Element.hpp
+    Entry.cpp
+    Entry.hpp
+    File.cpp
+    File.hpp
+    ListVisitor.cpp
+    ListVisitor.hpp
+    Main.cpp
+    Visitor.cpp
+    Visitor.hpp
+    )
 
-add_executable(chapter_3 ${_sources})
+add_executable(Visitor ${_sources})
