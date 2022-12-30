@@ -10,6 +10,6 @@ int main() {
 #else
     std::cout << "hello release" << std::endl;
 #endif
-  std::cout << say_hello() << std::endl;
-  return EXIT_SUCCESS;
+    std::cout << say_hello() << std::endl;
+    return EXIT_SUCCESS;
 }
