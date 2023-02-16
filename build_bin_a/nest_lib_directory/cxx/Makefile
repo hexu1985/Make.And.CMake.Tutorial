@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -g3 -Wall -Wextra -fPIC
+CXXFLAGS = -g3 -Wall -Wextra
 
 INCLUDES = -Ilib
-LDFLAGS = -Wl,-rpath,'$$ORIGIN/lib' -Wl,--enable-new-dtags -lmessage
+LDFLAGS = -lmessage
 LDPATH = -Llib
 
 OBJECTS = hello-world.o
@@ -21,5 +21,5 @@ $(TARGET): $(OBJECTS)
 .PHONY:
 clean:
 	$(MAKE) clean --directory=lib
-	$(RM) $(TARGET) a.out core *.o
+	$(RM) $(TARGET) $(LIB_NAME) a.out core *.o
 	@echo "clean OK!"
