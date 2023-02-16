@@ -1,11 +1,11 @@
-CXX = g++
-CXXFLAGS = -g3 -Wall -Wextra
+CC = gcc
+CFLAGS = -g3 -Wall -Wextra
 
 INCLUDES = -Ilib
-LDFLAGS = -lmessage
+LDFLAGS = -lhello
 LDPATH = -Llib
 
-OBJECTS = hello-world.o
+OBJECTS = main.o
 TARGET = hello-world
 
 all: $(TARGET)
@@ -13,10 +13,10 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(MAKE) --directory=lib
-	$(CXX) -o $@ $^ $(LDFLAGS) $(LDPATH)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
 
-%.o:%.cpp
-	$(CXX) -o $@ -c $< $(CXXFLAGS) $(INCLUDES)
+%.o:%.c
+	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES)
 
 .PHONY:
 clean:
