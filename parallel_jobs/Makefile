@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -g3 -Wall -Wextra
-INCLUDE = 
+INCLUDES = 
 LDFLAGS = 
 LDLIBS = 
 

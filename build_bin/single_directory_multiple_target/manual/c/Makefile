@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -g3 -Wall -Wextra
-INCLUDE = 
+INCLUDES = 
 LDFLAGS = 
 LDLIBS = 
 
@@ -15,11 +15,11 @@ clean:
 	@echo "clean OK!"
 
 fibonacci: fibonacci.c
-	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDLIBS)
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDES) $(LDFLAGS) $(LDLIBS)
 
 test1: test1.c
-	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDLIBS)
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDES) $(LDFLAGS) $(LDLIBS)
 
 watch: watch.c
-	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(LDLIBS)
+	$(CC) -o $@ $^ $(CFLAGS) $(INCLUDES) $(LDFLAGS) $(LDLIBS)
 
