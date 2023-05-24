@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -g3 -Wall -Wextra
 
 INCLUDES = -Ilib
-LDFLAGS = -lhello
-LDPATH = -Llib
+LDFLAGS = -Llib
+LDLIBS = -lhello
 
 OBJECTS = main.o
 TARGET = hello-world
@@ -13,7 +13,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(MAKE) --directory=lib
-	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LDLIBS)
 
 %.o:%.c
 	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES)
