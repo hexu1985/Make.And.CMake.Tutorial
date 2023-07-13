@@ -1,5 +1,7 @@
 CXX = g++
 CXXFLAGS = -g3 -Wall -Wextra
+LDFLAGS =
+LDLIBS =
 
 SOURCES = $(shell ls *.cpp)
 TARGETS = $(subst .cpp,,$(SOURCES))

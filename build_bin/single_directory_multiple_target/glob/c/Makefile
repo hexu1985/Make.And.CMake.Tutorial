@@ -1,5 +1,7 @@
 CC = gcc
 CFLAGS = -g3 -Wall -Wextra
+LDFLAGS =
+LDLIBS = 
 
 SOURCES = $(shell ls *.c)
 TARGETS = $(subst .c,,$(SOURCES))
