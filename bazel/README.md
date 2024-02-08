@@ -46,3 +46,5 @@ $ export PATH="$PATH:$HOME/bin"
 
 您也可以将此命令添加到 ~/.bashrc 或 ~/.zshrc 文件使其永久保留。
 
+
+https://github.com/bazelbuild/examples
